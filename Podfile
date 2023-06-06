@@ -5,7 +5,7 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'MobileStudio' do
-  pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']
+#  pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']
   pod 'Alamofire', '~> 5.0'
   
   
