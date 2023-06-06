@@ -26,7 +26,6 @@ struct LoginView: View {
                 .padding()
                 .padding(.top, 50)
                 .frame(maxWidth: .infinity, alignment: .leading)
-//                .background(Color.blue)
                 
             
             HStack {
@@ -36,10 +35,9 @@ struct LoginView: View {
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
-//            .background(Color.orange)
             
 
-            
+            /// login
             TextField("请输入UM账号", text: $loginName)
                 .padding()
                 .font(.headline)
@@ -58,45 +56,54 @@ struct LoginView: View {
                 .foregroundColor(.white)
                 .background(Color.accentColor)
                 .cornerRadius(10)
+                .padding(.top, 10)
                 .onTapGesture {
-                    print("login in.. ")
                     isGuide = false
                 }
             
             
-            HStack(alignment: .center) {
+            /// agreementForUsage
+            HStack(alignment: .center, spacing: 0) {
                 
                 Button {
                     isChoosed.toggle()
                 } label: {
-                    Image(systemName: isChoosed ? "checkmark.circle.fill" : "circle")
+                    Image(systemName: isChoosed ? "checkmark.square.fill" : "square")
+                        .foregroundColor(isChoosed ? Color.accentColor : .gray)
+                        .padding(.trailing, 3)
+                    
                 }
 
                 
-                let a = Text("我已阅读并同意")
+                Text("我已阅读并同意")
                     .font(.system(size: 14))
                     .foregroundColor(.gray)
                 
-                let b = Text("《服务协议》")
+                
+                Text("《服务协议》")
                     .font(.system(size: 14))
                     .foregroundColor(.blue)
-     
-                let c = Text("和")
+                    .onTapGesture(perform: {
+                        print("《服务协议》..")
+                    })
+                
+                Text("和")
                     .font(.system(size: 14))
                     .foregroundColor(.gray)
                 
-                let d = Text("《隐私政策》")
+                Text("《隐私政策》")
                     .font(.system(size: 14))
                     .foregroundColor(.blue)
-                
-                Text("\(a)\(b)\(c)\(d)")
+                    .onTapGesture(perform: {
+                        print("《隐私政策》..")
+                    })
 
                 
             }
             .padding(.top, 5)
-//            .background(Color.yellow)
             .multilineTextAlignment(.leading)
             
+            /// forgetPwd
             Text("忘记密码？")
                 .font(.system(size: 14))
                 .foregroundColor(.gray)
@@ -108,6 +115,7 @@ struct LoginView: View {
             
             Spacer()
             
+            /// moreLoginType
             VStack {
                 
                 Text("更多登录方式")
@@ -135,7 +143,6 @@ struct LoginView: View {
 
                     }
                     
-                    
 
                     Button {
                         
@@ -161,6 +168,8 @@ struct LoginView: View {
         .padding()
         
     }
+    
+    
 }
 
 struct LoginView_Previews: PreviewProvider {
@@ -168,3 +177,6 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
+
+
