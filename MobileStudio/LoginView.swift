@@ -19,12 +19,7 @@ struct LoginView: View {
     var body: some View {
         
         VStack{
-//            
-//            Rectangle()
-//                .frame(maxHeight: 250)
-//                .foregroundColor(Color.white)
-                
-            
+
             Text("欢迎使用Mobile Studio")
                 .font(.title)
                 .fontWeight(.medium)
@@ -55,18 +50,28 @@ struct LoginView: View {
                 .font(.headline)
                 .background(Color.gray.opacity(0.1).cornerRadius(10))
             
-            HStack(alignment: .center) {
-//            Toggle(isOn: $isChoosed){
-//
-//            }
-//            .labelsHidden()
-//            .pickerStyle(.inline)
-                
-                    
-                Picker("选择类型", selection: $isChoosed) {
+            
+            Text("登录")
+                .padding()
+                .frame(maxWidth: .infinity)
+                .font(.headline)
+                .foregroundColor(.white)
+                .background(Color.accentColor)
+                .cornerRadius(10)
+                .onTapGesture {
+                    print("login in.. ")
+                    isGuide = false
                 }
-                .pickerStyle(InlinePickerStyle())
-                .labelsHidden()
+            
+            
+            HStack(alignment: .center) {
+                
+                Button {
+                    isChoosed.toggle()
+                } label: {
+                    Image(systemName: isChoosed ? "checkmark.circle.fill" : "circle")
+                }
+
                 
                 let a = Text("我已阅读并同意")
                     .font(.system(size: 14))
@@ -92,23 +97,11 @@ struct LoginView: View {
 //            .background(Color.yellow)
             .multilineTextAlignment(.leading)
             
-            Text("登录")
-                .padding()
-                .frame(maxWidth: .infinity)
-                .font(.headline)
-                .foregroundColor(.white)
-                .background(Color.accentColor)
-                .cornerRadius(10)
-                .onTapGesture {
-                    print("login in.. ")
-                    isGuide = false
-                }
-            
             Text("忘记密码？")
                 .font(.system(size: 14))
-                .frame(maxWidth: .infinity)
+                .foregroundColor(.gray)
+                .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding()
-//                .background(Color.blue)
                 .onTapGesture {
                     print("忘记密码..")
                 }
@@ -118,22 +111,47 @@ struct LoginView: View {
             VStack {
                 
                 Text("更多登录方式")
+                    .font(.system(size: 14))
                     .foregroundColor(.gray)
                 
+                Divider()
+                
                 HStack{
-                    Label("SSO登录", systemImage: "key.viewfinder")
-                        .font(.body)
-                        .padding()
-                        .onTapGesture {
-                            print("SSO..")
+                    Button {
+                        
+                    } label: {
+                        HStack {
+                            Image("Wx_Logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                            
+                            Text("微信")
+                                .font(.system(size: 14))
+                                .foregroundColor(.black)
                         }
+                        .padding()
+                        
+
+                    }
                     
-                    Label("微信", systemImage: "message")
-                        .font(.body)
-                        .padding()
-                        .onTapGesture {
-                            print("微信..")
+                    
+
+                    Button {
+                        
+                    } label: {
+                        HStack {
+                            Image(systemName: "apple.logo")
+                                .foregroundColor(.black)
+                                .scaledToFit()
+                                .frame(width: 20, height: 20)
+                            
+                            Text("Apple")
+                                .font(.system(size: 14))
+                                .foregroundColor(.black)
                         }
+                        .padding()
+                    }
                 }
                 
             }
