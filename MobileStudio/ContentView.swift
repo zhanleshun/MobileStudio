@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @AppStorage("isLogin") var isLogin: Bool = false
-    
     @AppStorage("isGuide") var isGuide: Bool = false
     
-//    @State private var backgroundColor: Color = Color.init("Color_Green_Light_4")
+    @AppStorage("isUmLogin") var isUmLogin: Bool = false
+    
+    @AppStorage("isPhoneLogin") var isPhoneLogin: Bool = false
+    
+    
     @State private var backgroundColor: Color = Color.white
     
     var body: some View {
@@ -21,11 +22,14 @@ struct ContentView: View {
         ZStack {
             backgroundColor.ignoresSafeArea()
             
-            if isLogin {
-                // ChatView
+            if isPhoneLogin {
+                 ChatView()
                 
-            }else if isGuide {
-                 LoginView()
+            } else if isUmLogin {
+                PhoneLoginView()
+                
+            } else if isGuide {
+                UmLoginView()
             
             }else {
                 GuideView()

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		895B72AE3A51F84A54E6D2F9 /* Pods_MobileStudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2DCA84F03241BE9FB260 /* Pods_MobileStudio.framework */; };
+		EBB50E0E2A2F8D3800116F75 /* PhoneLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB50E0D2A2F8D3800116F75 /* PhoneLoginView.swift */; };
+		EBB50E102A2F96C300116F75 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB50E0F2A2F96C300116F75 /* ChatView.swift */; };
 		EBBACEB82A2B103C0053E24E /* MobileStudioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBACEB72A2B103C0053E24E /* MobileStudioApp.swift */; };
 		EBBACEBA2A2B103C0053E24E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBACEB92A2B103C0053E24E /* ContentView.swift */; };
 		EBBACEBC2A2B10400053E24E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBBACEBB2A2B10400053E24E /* Assets.xcassets */; };
@@ -16,13 +18,15 @@
 		EBC2ECF62A2C92F200818D10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC2ECF52A2C92F100818D10 /* LaunchScreen.storyboard */; };
 		EBC2ECF92A2CD0A100818D10 /* GuideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2ECF82A2CD0A100818D10 /* GuideModel.swift */; };
 		EBC2ECFB2A2CD1E100818D10 /* GuideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2ECFA2A2CD1E100818D10 /* GuideViewModel.swift */; };
-		EBC2ECFD2A2CE2D700818D10 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2ECFC2A2CE2D700818D10 /* LoginView.swift */; };
+		EBC2ECFD2A2CE2D700818D10 /* UmLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2ECFC2A2CE2D700818D10 /* UmLoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04BE31BBB48CDAD336B31313 /* Pods-MobileStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileStudio.debug.xcconfig"; path = "Target Support Files/Pods-MobileStudio/Pods-MobileStudio.debug.xcconfig"; sourceTree = "<group>"; };
 		1D3E2DCA84F03241BE9FB260 /* Pods_MobileStudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MobileStudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C856B5A6E36584DD1B755ED5 /* Pods-MobileStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MobileStudio.release.xcconfig"; path = "Target Support Files/Pods-MobileStudio/Pods-MobileStudio.release.xcconfig"; sourceTree = "<group>"; };
+		EBB50E0D2A2F8D3800116F75 /* PhoneLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneLoginView.swift; sourceTree = "<group>"; };
+		EBB50E0F2A2F96C300116F75 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		EBBACEB42A2B103C0053E24E /* MobileStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBACEB72A2B103C0053E24E /* MobileStudioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileStudioApp.swift; sourceTree = "<group>"; };
 		EBBACEB92A2B103C0053E24E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,7 +37,7 @@
 		EBC2ECF72A2CCB3C00818D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EBC2ECF82A2CD0A100818D10 /* GuideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideModel.swift; sourceTree = "<group>"; };
 		EBC2ECFA2A2CD1E100818D10 /* GuideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewModel.swift; sourceTree = "<group>"; };
-		EBC2ECFC2A2CE2D700818D10 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		EBC2ECFC2A2CE2D700818D10 /* UmLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UmLoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +66,34 @@
 				04BE31BBB48CDAD336B31313 /* Pods-MobileStudio.debug.xcconfig */,
 				C856B5A6E36584DD1B755ED5 /* Pods-MobileStudio.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EBB50E0B2A2F8A7800116F75 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EBC2ECFC2A2CE2D700818D10 /* UmLoginView.swift */,
+				EBB50E0D2A2F8D3800116F75 /* PhoneLoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EBB50E0C2A2F8A8E00116F75 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+				EBBACEC52A2B14800053E24E /* GuideView.swift */,
+				EBC2ECF82A2CD0A100818D10 /* GuideModel.swift */,
+				EBC2ECFA2A2CD1E100818D10 /* GuideViewModel.swift */,
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		EBB50E112A300F7A00116F75 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				EBB50E0F2A2F96C300116F75 /* ChatView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		EBBACEAB2A2B103C0053E24E = {
@@ -87,14 +117,13 @@
 		EBBACEB62A2B103C0053E24E /* MobileStudio */ = {
 			isa = PBXGroup;
 			children = (
+				EBB50E0C2A2F8A8E00116F75 /* Guide */,
+				EBB50E0B2A2F8A7800116F75 /* Login */,
+				EBB50E112A300F7A00116F75 /* Chat */,
 				EBC2ECF72A2CCB3C00818D10 /* Info.plist */,
 				EBC2ECF52A2C92F100818D10 /* LaunchScreen.storyboard */,
 				EBBACEB72A2B103C0053E24E /* MobileStudioApp.swift */,
 				EBBACEB92A2B103C0053E24E /* ContentView.swift */,
-				EBBACEC52A2B14800053E24E /* GuideView.swift */,
-				EBC2ECF82A2CD0A100818D10 /* GuideModel.swift */,
-				EBC2ECFA2A2CD1E100818D10 /* GuideViewModel.swift */,
-				EBC2ECFC2A2CE2D700818D10 /* LoginView.swift */,
 				EBBACEBB2A2B10400053E24E /* Assets.xcassets */,
 				EBBACEBD2A2B10400053E24E /* Preview Content */,
 			);
@@ -224,9 +253,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBC2ECFD2A2CE2D700818D10 /* LoginView.swift in Sources */,
+				EBB50E0E2A2F8D3800116F75 /* PhoneLoginView.swift in Sources */,
+				EBC2ECFD2A2CE2D700818D10 /* UmLoginView.swift in Sources */,
 				EBBACEC62A2B14800053E24E /* GuideView.swift in Sources */,
 				EBC2ECFB2A2CD1E100818D10 /* GuideViewModel.swift in Sources */,
+				EBB50E102A2F96C300116F75 /* ChatView.swift in Sources */,
 				EBBACEBA2A2B103C0053E24E /* ContentView.swift in Sources */,
 				EBC2ECF92A2CD0A100818D10 /* GuideModel.swift in Sources */,
 				EBBACEB82A2B103C0053E24E /* MobileStudioApp.swift in Sources */,

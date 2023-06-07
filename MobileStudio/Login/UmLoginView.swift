@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct UmLoginView: View {
     
     
     @State var loginName: String = ""
@@ -15,6 +15,8 @@ struct LoginView: View {
     @State var isChoosed: Bool = false
     
     @AppStorage("isGuide") var isGuide: Bool = false
+    @AppStorage("isUmLogin") var isUmLogin: Bool = false
+
     
     var body: some View {
         
@@ -29,6 +31,7 @@ struct LoginView: View {
                 
             
             HStack {
+                
                 Text("企业账号登录")
                     .font(.title2)
 
@@ -49,17 +52,22 @@ struct LoginView: View {
                 .background(Color.gray.opacity(0.1).cornerRadius(10))
             
             
-            Text("登录")
-                .padding()
-                .frame(maxWidth: .infinity)
-                .font(.headline)
-                .foregroundColor(.white)
-                .background(Color.accentColor)
-                .cornerRadius(10)
-                .padding(.top, 10)
-                .onTapGesture {
-                    isGuide = false
-                }
+            Button {
+                
+                isUmLogin = true
+
+            } label: {
+                Text("登录")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .background(Color.accentColor)
+                    .cornerRadius(10)
+                    .padding(.top, 10)
+            }
+
+ 
             
             
             /// agreementForUsage
@@ -172,11 +180,18 @@ struct LoginView: View {
     
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct UmLoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        UmLoginView()
     }
 }
 
+// MARK: Functions
 
+extension UmLoginView {
+    
+    
+    
+    
+}
 
